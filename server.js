@@ -354,6 +354,15 @@ app.delete('/api/admin/hero/:id', async (req, res) => {
   }
 });
 
+// Add global error handler for Multer/Cloudinary errors
+app.use((err, req, res, next) => {
+  console.error("Global Error Handler caught:", err);
+  res.status(500).json({ 
+    error: 'Internal Server Error', 
+    details: err.message || err.toString()
+  });
+});
+
 // ==========================================
 // START SERVER
 // ==========================================
