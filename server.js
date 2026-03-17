@@ -76,6 +76,13 @@ const heroSlideSchema = new mongoose.Schema({
 
 const HeroSlide = mongoose.model('HeroSlide', heroSlideSchema);
 
+const settingSchema = new mongoose.Schema({
+  key: { type: String, required: true, unique: true },
+  value: { type: String, default: '' },
+  updatedAt: { type: Date, default: Date.now }
+});
+const Setting = mongoose.model('Setting', settingSchema);
+
 // ==========================================
 // TELEGRAM NOTIFICATION HELPER
 // ==========================================
@@ -119,6 +126,33 @@ async function sendTelegramNotification(booking) {
 // ==========================================
 // API ROUTES
 // ==========================================
+
+// --- SITE SETTINGS ---
+app.get('/api/settings', async (req, res) => {
+  try {
+    if (mongoose.connection.readyState !== 1) return res.json({});
+    const settings = await Setting.find();
+    const settingsMap = settings.reduce((acc, curr) => {
+      acc[curr.key] = curr.value;
+      return acc;
+    }, {});
+    res.json(settingsMap);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/admin/settings', async (req, res) => {
+  try {
+    const updates = req.body;
+    for (const [key, value] of Object.entries(updates)) {
+      await Setting.findOneAndUpdate({ key }, { value, updatedAt: Date.now() }, { upsert: true });
+    }
+    res.json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 // 1. Get all public games
 app.get('/api/games', async (req, res) => {

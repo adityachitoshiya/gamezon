@@ -30,6 +30,25 @@ function initIcons() {
   createIcons({ icons });
 }
 
+async function fetchAndApplySettings() {
+  try {
+    const res = await fetch(`${API_URL}/settings`);
+    if (!res.ok) return;
+    const settings = await res.json();
+    
+    // Apply texts dynamically to elements with data-cms attributes
+    document.querySelectorAll('[data-cms]').forEach(el => {
+      const key = el.getAttribute('data-cms');
+      if (settings[key]) {
+        if (key === 'heroTitle') el.innerHTML = settings[key]; // Allow HTML inside hero title
+        else el.textContent = settings[key];
+      }
+    });
+  } catch (err) {
+    console.error('Error fetching settings:', err);
+  }
+}
+
 async function fetchAndRenderGames() {
   const scroll = document.getElementById('games-scroll');
   const grid = document.getElementById('games-page-grid');
@@ -296,6 +315,7 @@ function initBookingLogic() {
 // ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   initIcons();
+  fetchAndApplySettings();
   fetchAndRenderGames();
   initBookingLogic();
 });
