@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>GameZone - Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-inter antialiased pb-24">
+
+  <!-- Top Header Mobile -->
+  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+        <i data-lucide="library" class="w-5 h-5"></i>
+      </div>
+      <span class="font-bold text-lg tracking-tight">Library</span>
+    </div>
+  </header>
+
+  <div class="w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+
+  <main class="w-full max-w-md mx-auto sm:my-8 sm:bg-white sm:shadow-xl sm:rounded-3xl sm:border border-gray-100 sm:overflow-hidden sm:min-h-[800px] relative">
+    
+    <section class="p-4 pt-6 pb-24">
+      <div id="games-page-grid" class="columns-2 gap-4">
+        <!-- JS Injected Games -->
+      </div>
+    </section>
+
+    <!-- Bottom App Navigation -->
+    <nav class="fixed bottom-0 left-0 w-full sm:absolute sm:bottom-0 sm:left-0 sm:w-full bg-white/90 backdrop-blur-xl border-t border-gray-200 px-6 py-3 pb-safe z-50 flex justify-between items-center z-50">
+      <a href="/index.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform">
+        <i data-lucide="home" class="w-6 h-6"></i>
+        <span class="text-[10px] font-semibold">Home</span>
+      </a>
+      <a href="/library.html" class="flex flex-col items-center gap-1 text-blue-600 active:scale-90 transition-transform">
+        <i data-lucide="library" class="w-6 h-6 fill-blue-50"></i>
+        <span class="text-[10px] font-semibold">Library</span>
+      </a>
+      <a href="/book.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform translate-y-[-10px] relative z-10">
+        <div class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg shadow-gray-900/40 border-4 border-gray-50">
+          <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+        </div>
+      </a>
+      <a href="/location.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform">
+        <i data-lucide="map" class="w-6 h-6"></i>
+        <span class="text-[10px] font-semibold">Location</span>
+      </a>
+      <a href="/login.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform">
+        <i data-lucide="user-circle" class="w-6 h-6"></i>
+        <span class="text-[10px] font-semibold">Login</span>
+      </a>
+    </nav>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

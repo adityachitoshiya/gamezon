@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>GameZone - Location</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-inter antialiased pb-24">
+
+  <!-- Top Header Mobile -->
+  <header class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-gray-200 px-4 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white">
+        <i data-lucide="map-pin" class="w-5 h-5"></i>
+      </div>
+      <span class="font-bold text-lg tracking-tight">Location</span>
+    </div>
+  </header>
+
+  <div class="w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+
+  <main class="w-full max-w-md mx-auto sm:my-8 sm:bg-white sm:shadow-xl sm:rounded-3xl sm:border border-gray-100 sm:overflow-hidden sm:min-h-[800px] relative">
+    
+    <section class="p-4 pt-6 pb-24">
+      <div class="w-full h-48 bg-gray-200 rounded-2xl mb-5 overflow-hidden flex items-center justify-center relative shadow-inner">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
+        <div class="relative z-10 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-2xl animate-bounce">
+           <i data-lucide="map-pin" class="w-7 h-7 text-red-500 fill-red-50"></i>
+        </div>
+      </div>
+      
+      <h2 class="text-2xl font-bold text-gray-900 mb-1">GameZone Lounge</h2>
+      <p class="text-sm text-gray-500 mb-8">123 Gaming Street, Cyber City, IN 400001</p>
+      
+      <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-center gap-4 mb-4">
+         <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+           <i data-lucide="phone" class="w-5 h-5"></i>
+         </div>
+         <div>
+            <p class="text-xs font-bold tracking-wider text-gray-400 uppercase mb-0.5">Call Us</p>
+            <p class="font-bold text-gray-900 text-lg">+91 98765 43210</p>
+         </div>
+      </div>
+      
+      <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex items-center gap-4">
+         <div class="w-12 h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+           <i data-lucide="clock" class="w-5 h-5"></i>
+         </div>
+         <div>
+            <p class="text-xs font-bold tracking-wider text-gray-400 uppercase mb-0.5">Open Hours</p>
+            <p class="font-bold text-gray-900 text-lg">10:00 AM - 10:00 PM</p>
+         </div>
+      </div>
+    </section>
+
+    <!-- Bottom App Navigation -->
+    <nav class="fixed bottom-0 left-0 w-full sm:absolute sm:bottom-0 sm:left-0 sm:w-full bg-white/90 backdrop-blur-xl border-t border-gray-200 px-6 py-3 pb-safe z-50 flex justify-between items-center z-50">
+      <a href="/index.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform">
+        <i data-lucide="home" class="w-6 h-6"></i>
+        <span class="text-[10px] font-semibold">Home</span>
+      </a>
+      <a href="/library.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform">
+        <i data-lucide="library" class="w-6 h-6"></i>
+        <span class="text-[10px] font-semibold">Library</span>
+      </a>
+      <a href="/book.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform translate-y-[-10px] relative z-10">
+        <div class="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg shadow-gray-900/40 border-4 border-gray-50">
+          <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+        </div>
+      </a>
+      <a href="/location.html" class="flex flex-col items-center gap-1 text-blue-600 active:scale-90 transition-transform">
+        <i data-lucide="map" class="w-6 h-6 fill-blue-50"></i>
+        <span class="text-[10px] font-semibold">Location</span>
+      </a>
+      <a href="/login.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-gray-900 active:scale-90 transition-transform">
+        <i data-lucide="user-circle" class="w-6 h-6"></i>
+        <span class="text-[10px] font-semibold">Login</span>
+      </a>
+    </nav>
+  </main>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
