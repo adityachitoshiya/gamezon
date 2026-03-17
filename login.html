@@ -366,8 +366,11 @@
         if (res.ok) {
           e.target.reset();
           fetchGames();
-        } else alert('Failed to add game. Check backend.');
-      } catch(err) { alert('API Error adding game.'); }
+        } else {
+          const errData = await res.json();
+          alert(`Failed: ${errData.details || errData.error || 'Server error'}`);
+        }
+      } catch(err) { alert(`API Error adding game: ${err.message}`); }
       finally {
         submitBtn.textContent = 'Save to Library';
         submitBtn.disabled = false;
