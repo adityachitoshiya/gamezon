@@ -1,7 +1,7 @@
 import './style.css';
 import { createIcons, icons } from 'lucide';
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 
 // Games will be fetched from API instead of hardcoded
 
