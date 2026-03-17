@@ -267,6 +267,10 @@ app.delete('/api/admin/games/:id', async (req, res) => {
       return res.status(401).json({ error: 'Unauthorized' });
     }
 
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ error: 'Invalid ID format' });
+    }
+
     await Game.findByIdAndDelete(req.params.id);
     res.json({ message: 'Game deleted' });
   } catch (error) {
